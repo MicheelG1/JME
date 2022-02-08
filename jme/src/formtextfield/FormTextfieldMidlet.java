@@ -38,7 +38,7 @@ public class FormTextfieldMidlet extends MIDlet
         tfNum2 = new TextField(("Numero 2:"), "", 10, TextField.DECIMAL);
         tfOperador = new TextField(("Operación:"), "", 1, TextField.ANY);
         tfResultado = new TextField(("Resultado:"), "", 10, TextField.DECIMAL);
-        msg = new StringItem("", "Escriba los numeros, asigne" + "operacion A para sumar o M para multiplicar," + "y presionamos GO");
+        msg = new StringItem("", "Escriba los numeros, asigne" + "operacion A para sumar, M para multiplicar, R para restar o D para dividir" + "y presionamos GO");
         mainForm.append(tfNum1);
         mainForm.append(tfNum2);
         mainForm.append(tfOperador);
@@ -70,6 +70,13 @@ public class FormTextfieldMidlet extends MIDlet
             if(oper.equalsIgnoreCase("M")){
                 result = num1 * num2;
             }
+            if(oper.equalsIgnoreCase("R")){
+                result = num1 - num2;
+            }
+            if(oper.equalsIgnoreCase("D")){
+                result = num1 / num2;
+            }
+            
             tfResultado.setString(result + "");
         }
         if(c == cmdExit){
